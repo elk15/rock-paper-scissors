@@ -1,0 +1,113 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body{
+    background-image: url(imgs/1089608.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p{
+    text-align: center;
+}
+
+#btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.red{
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+#instructions{
+    background-color: white;
+    width: 50%;
+    margin:5em auto;
+    padding: 1em;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+img{
+    width: 150px;
+}
+
+button{
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+button:hover{
+    border: 1px solid lightgray;
+    filter: drop-shadow(0 0 0.75rem white);
+}
+
+#grass{
+    background-color: yellowgreen;
+}
+
+#water{
+    background-color: turquoise;
+}
+
+#fire{
+    background-color: tomato;
+}
+
+#text{
+    width: 50%;
+    background-color: rgb(118, 200, 147, 0.7);
+    margin-top: 4em;
+    padding: 1em;
+    border-radius: 1em;
+    border: 2px solid #52B69A;
+}
+
+@media screen and (max-width: 428px) {
+    #instructions{
+        width:80%;
+    }
+
+    img{
+        width: 80px;
+    }
+  
+} 
+  

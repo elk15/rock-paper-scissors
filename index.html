@@ -5,84 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magic - Sword - Bow</title>
+    <title>Pokemon Game</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <script>
-        //Function that determines the computer's move.
-        function computerPlay() {
-            let randomNumber = Math.floor(Math.random() * 3) + 1;
-            let computerMove = "";
-            if (randomNumber === 1) {
-                return computerMove = "magic";
-            } else if (randomNumber === 2) {
-                return computerMove = "sword";
-            } else {
-                return computerMove = "bow"
-            }
-        }
-        //Function that determines who wins the round.
-        function playRound(playerSelection, computerSelection) {
-            playerSelection = playerSelection.toLowerCase();
-            switch (true) {
-                case (playerSelection === computerSelection):
-                    return "It's a tie! Try again.";
-                    break;
-                case playerSelection === "magic":
-                    if (computerSelection === "sword") {
-                        return "You win! Magic beats sword.";
-                    } else {
-                        return "You lose! Bow beats magic.";
-                    }
-                    break;
-                case playerSelection === "sword":
-                    if (computerSelection === "magic") {
-                        return "You lose! Magic beats sword.";
-                    } else {
-                        return "You win! Sword beats bow.";
-                    }
-                    break;
-                case playerSelection === "bow":
-                    if (computerSelection === "magic") {
-                        return "You win! Bow beats magic.";
-                    } else {
-                        return "You lose! Sword beats bow.";
-                    }
-            }
-
-        }
-        //Function to play a 5 round game.
-        function game() {
-            let playerMove = "";
-            let result = "";
-            let computerLives = 5;
-            let playerLives = 5;
-            for (let i = 1; i <= 5; i++) {
-                playerMove = prompt("What's your next move?")
-                result = playRound(playerMove, computerPlay());
-                console.log(result);
-                if (result.search("win") == 4) {
-                    computerLives--;
-                } else if (result.search("lose") == 4) {
-                    playerLives--;
-                }
-            }
-            if (playerLives === computerLives) {
-                return "It's a tie. Please try again!";
-            } else if (playerLives === 0) {
-                return "You lost the game.";
-            } else if (computerLives === 0) {
-                return "You won the game!";
-            } else if (playerLives > computerLives) {
-                return "You won the game!";
-            } else {
-                return "You lost the game";
-            }
-
-        }
-
-    </script>
+    <div>
+        <p id='instructions'>Instructions: Choose you Pokemon! Grass type wins against water and loses to fire.
+            Water type wins against fire and loses to grass. Fire type wins against grass and
+            loses to water. The player who gets 5 points first wins!
+        </p>
+    </div>
+    <div id='btns'>
+        <button id='grass'><img src="imgs/bulbasaur.png" alt="bulbasaur"></button>
+        <button id='water'><img src="imgs/squirtle.png" alt="squirtle"></button>
+        <button id='fire'> <img src="imgs/charmander.png" alt="charmander"></button>
+    </div>
+    <div id='text'>
+        <p id='results'>Let's Play!</p>
+        <p>Your Score: <span id='player-score'>0</span> Enemy Score: <span id='computer-score'>0</span></p>
+        <p id='final-result'></p>
+    </div>
 </body>
 
 </html>
