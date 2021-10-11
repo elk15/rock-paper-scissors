@@ -108,6 +108,7 @@ function gameOver() {
     let newGameBtn = document.createElement('button');
     newGameBtn.innerText = 'New Game';
     textArea.appendChild(newGameBtn);
+    newGameBtn.classList.add('newGameBtn');
     newGameBtn.addEventListener('click', () => {
         para.innerText = '';
         playerScore = 0;
